@@ -36,7 +36,7 @@ namespace Personen_db
             // Personendaten in mdf eintragen
             myDB.Insert(myPerson);
             
-            // Daten in lvi eintragen um 19:17
+            // Daten in lvi eintragen um 19:41
             ListViewItem lvi;
             lvi = new ListViewItem(myPerson.fName);
             lvi.SubItems.Add(myPerson.lName);
