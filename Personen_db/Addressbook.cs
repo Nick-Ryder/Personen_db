@@ -35,13 +35,8 @@ namespace Personen_db
 
             // Personendaten in mdf eintragen
             myDB.Insert(myPerson);
-
-
-            // Daten in ListView eintragen
-
             
             // Daten in lvi eintragen
-
             ListViewItem lvi;
             lvi = new ListViewItem(myPerson.fName);
             lvi.SubItems.Add(myPerson.lName);
