@@ -32,8 +32,11 @@ namespace Personen_db
             myPerson.telefon = textBoxTelefon.Text;
             myPerson.email = textBoxEmail.Text;
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
+
             // Personendaten in mdf eintragen
             myDB.Insert(myPerson);
+            
+            // Daten in lvi eintragen
             ListViewItem lvi;
             lvi = new ListViewItem(myPerson.fName);
             lvi.SubItems.Add(myPerson.lName);
