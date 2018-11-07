@@ -20,4 +20,4 @@ namespace Personen_db
     }
 }
 
-// mal sehn was github jetzt macht
+// mal sehn was github jetzt macht, und ob am 07-11-2018 sich was geändert hat
