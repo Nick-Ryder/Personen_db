@@ -63,9 +63,10 @@
             // 
             this.Vorname.AutoSize = true;
             this.Vorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vorname.Location = new System.Drawing.Point(10, 38);
+            this.Vorname.Location = new System.Drawing.Point(13, 47);
+            this.Vorname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Vorname.Name = "Vorname";
-            this.Vorname.Size = new System.Drawing.Size(72, 18);
+            this.Vorname.Size = new System.Drawing.Size(93, 24);
             this.Vorname.TabIndex = 0;
             this.Vorname.Text = "Vorname:";
             // 
@@ -73,9 +74,10 @@
             // 
             this.Nachname.AutoSize = true;
             this.Nachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nachname.Location = new System.Drawing.Point(10, 65);
+            this.Nachname.Location = new System.Drawing.Point(13, 80);
+            this.Nachname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nachname.Name = "Nachname";
-            this.Nachname.Size = new System.Drawing.Size(84, 18);
+            this.Nachname.Size = new System.Drawing.Size(108, 24);
             this.Nachname.TabIndex = 1;
             this.Nachname.Text = "Nachname:";
             // 
@@ -83,9 +85,10 @@
             // 
             this.Strasse.AutoSize = true;
             this.Strasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Strasse.Location = new System.Drawing.Point(10, 91);
+            this.Strasse.Location = new System.Drawing.Point(13, 112);
+            this.Strasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Strasse.Name = "Strasse";
-            this.Strasse.Size = new System.Drawing.Size(63, 18);
+            this.Strasse.Size = new System.Drawing.Size(76, 24);
             this.Strasse.TabIndex = 2;
             this.Strasse.Text = "Strasse:";
             // 
@@ -93,9 +96,10 @@
             // 
             this.Hausnummer.AutoSize = true;
             this.Hausnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hausnummer.Location = new System.Drawing.Point(10, 118);
+            this.Hausnummer.Location = new System.Drawing.Point(13, 145);
+            this.Hausnummer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Hausnummer.Name = "Hausnummer";
-            this.Hausnummer.Size = new System.Drawing.Size(102, 18);
+            this.Hausnummer.Size = new System.Drawing.Size(130, 24);
             this.Hausnummer.TabIndex = 3;
             this.Hausnummer.Text = "Hausnummer:";
             // 
@@ -103,9 +107,10 @@
             // 
             this.Plz.AutoSize = true;
             this.Plz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Plz.Location = new System.Drawing.Point(10, 145);
+            this.Plz.Location = new System.Drawing.Point(13, 178);
+            this.Plz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Plz.Name = "Plz";
-            this.Plz.Size = new System.Drawing.Size(33, 18);
+            this.Plz.Size = new System.Drawing.Size(40, 24);
             this.Plz.TabIndex = 4;
             this.Plz.Text = "Plz:";
             // 
@@ -113,9 +118,10 @@
             // 
             this.Ort.AutoSize = true;
             this.Ort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ort.Location = new System.Drawing.Point(10, 172);
+            this.Ort.Location = new System.Drawing.Point(13, 212);
+            this.Ort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ort.Name = "Ort";
-            this.Ort.Size = new System.Drawing.Size(33, 18);
+            this.Ort.Size = new System.Drawing.Size(40, 24);
             this.Ort.TabIndex = 5;
             this.Ort.Text = "Ort:";
             // 
@@ -123,9 +129,10 @@
             // 
             this.Telefon.AutoSize = true;
             this.Telefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefon.Location = new System.Drawing.Point(10, 199);
+            this.Telefon.Location = new System.Drawing.Point(13, 245);
+            this.Telefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Telefon.Name = "Telefon";
-            this.Telefon.Size = new System.Drawing.Size(61, 18);
+            this.Telefon.Size = new System.Drawing.Size(79, 24);
             this.Telefon.TabIndex = 6;
             this.Telefon.Text = "Telefon:";
             // 
@@ -133,73 +140,83 @@
             // 
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(10, 225);
+            this.Email.Location = new System.Drawing.Point(13, 277);
+            this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(49, 18);
+            this.Email.Size = new System.Drawing.Size(62, 24);
             this.Email.TabIndex = 7;
             this.Email.Text = "Email:";
             // 
             // textBoxFname
             // 
-            this.textBoxFname.Location = new System.Drawing.Point(131, 36);
+            this.textBoxFname.Location = new System.Drawing.Point(175, 44);
+            this.textBoxFname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(130, 20);
+            this.textBoxFname.Size = new System.Drawing.Size(172, 22);
             this.textBoxFname.TabIndex = 8;
             // 
             // textBoxLname
             // 
-            this.textBoxLname.Location = new System.Drawing.Point(131, 63);
+            this.textBoxLname.Location = new System.Drawing.Point(175, 78);
+            this.textBoxLname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLname.Name = "textBoxLname";
-            this.textBoxLname.Size = new System.Drawing.Size(130, 20);
+            this.textBoxLname.Size = new System.Drawing.Size(172, 22);
             this.textBoxLname.TabIndex = 9;
             // 
             // textBoxStreet
             // 
-            this.textBoxStreet.Location = new System.Drawing.Point(131, 89);
+            this.textBoxStreet.Location = new System.Drawing.Point(175, 110);
+            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxStreet.Name = "textBoxStreet";
-            this.textBoxStreet.Size = new System.Drawing.Size(130, 20);
+            this.textBoxStreet.Size = new System.Drawing.Size(172, 22);
             this.textBoxStreet.TabIndex = 10;
             // 
             // textBoxNr
             // 
-            this.textBoxNr.Location = new System.Drawing.Point(131, 116);
+            this.textBoxNr.Location = new System.Drawing.Point(175, 143);
+            this.textBoxNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNr.Name = "textBoxNr";
-            this.textBoxNr.Size = new System.Drawing.Size(50, 20);
+            this.textBoxNr.Size = new System.Drawing.Size(65, 22);
             this.textBoxNr.TabIndex = 11;
             // 
             // textBoxPlz
             // 
-            this.textBoxPlz.Location = new System.Drawing.Point(131, 143);
+            this.textBoxPlz.Location = new System.Drawing.Point(175, 176);
+            this.textBoxPlz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPlz.Name = "textBoxPlz";
-            this.textBoxPlz.Size = new System.Drawing.Size(50, 20);
+            this.textBoxPlz.Size = new System.Drawing.Size(65, 22);
             this.textBoxPlz.TabIndex = 12;
             // 
             // textBoxLocation
             // 
-            this.textBoxLocation.Location = new System.Drawing.Point(131, 170);
+            this.textBoxLocation.Location = new System.Drawing.Point(175, 209);
+            this.textBoxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLocation.Name = "textBoxLocation";
-            this.textBoxLocation.Size = new System.Drawing.Size(130, 20);
+            this.textBoxLocation.Size = new System.Drawing.Size(172, 22);
             this.textBoxLocation.TabIndex = 13;
             // 
             // textBoxTelefon
             // 
-            this.textBoxTelefon.Location = new System.Drawing.Point(131, 197);
+            this.textBoxTelefon.Location = new System.Drawing.Point(175, 242);
+            this.textBoxTelefon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTelefon.Name = "textBoxTelefon";
-            this.textBoxTelefon.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTelefon.Size = new System.Drawing.Size(132, 22);
             this.textBoxTelefon.TabIndex = 14;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(131, 223);
+            this.textBoxEmail.Location = new System.Drawing.Point(175, 274);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(130, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(172, 22);
             this.textBoxEmail.TabIndex = 15;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 277);
+            this.button1.Location = new System.Drawing.Point(83, 341);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 16;
             this.button1.Text = "Eintragen";
             this.button1.UseVisualStyleBackColor = true;
@@ -207,9 +224,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 276);
+            this.button2.Location = new System.Drawing.Point(248, 340);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 17;
             this.button2.Text = "Löschen";
             this.button2.UseVisualStyleBackColor = true;
@@ -217,9 +235,10 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(313, 276);
+            this.button3.Location = new System.Drawing.Point(417, 340);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 18;
             this.button3.Text = "Ändern";
             this.button3.UseVisualStyleBackColor = true;
@@ -240,9 +259,10 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 306);
+            this.listView1.Location = new System.Drawing.Point(0, 378);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(810, 313);
+            this.listView1.Size = new System.Drawing.Size(1080, 384);
             this.listView1.TabIndex = 20;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -294,9 +314,9 @@
             // 
             // Addressbook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 619);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1080, 762);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -317,6 +337,7 @@
             this.Controls.Add(this.Strasse);
             this.Controls.Add(this.Nachname);
             this.Controls.Add(this.Vorname);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Addressbook";
             this.Text = "Adressbuch";
             this.ResumeLayout(false);

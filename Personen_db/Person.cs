@@ -19,5 +19,3 @@ namespace Personen_db
         public int id = 0;
     }
 }
-
-// mal sehn was github jetzt macht
