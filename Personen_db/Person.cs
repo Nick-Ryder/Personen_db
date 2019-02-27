@@ -8,7 +8,7 @@ namespace Personen_db
 {
     public class Person
     {
-        public string fName="";
+        public string fName { get; set; }
         public string lName="";
         public string street="";
         public string number="";
@@ -19,5 +19,3 @@ namespace Personen_db
         public int id = 0;
     }
 }
-
-// mal sehn was github jetzt macht
