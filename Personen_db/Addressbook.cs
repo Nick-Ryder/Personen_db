@@ -23,29 +23,29 @@ namespace Personen_db
 
         public void Insert_Click(object sender, EventArgs e)
         {
-            myPerson.fName = textBoxFname.Text;
-            myPerson.lName = textBoxLname.Text;
-            myPerson.street = textBoxStreet.Text;
-            myPerson.number = textBoxNr.Text;
-            myPerson.plz = textBoxPlz.Text;
-            myPerson.location = textBoxLocation.Text;
-            myPerson.telefon = textBoxTelefon.Text;
-            myPerson.email = textBoxEmail.Text;
+            myPerson.FName = textBoxFname.Text;
+            myPerson.LName = textBoxLname.Text;
+            myPerson.Street = textBoxStreet.Text;
+            myPerson.Number = textBoxNr.Text;
+            myPerson.Plz = textBoxPlz.Text;
+            myPerson.Location = textBoxLocation.Text;
+            myPerson.Telefon = textBoxTelefon.Text;
+            myPerson.Email = textBoxEmail.Text;
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
             // Personendaten in mdf eintragen
             myDB.Insert(myPerson);
 
             // Daten in Listview eintragen
             ListViewItem lvi;
-            lvi = new ListViewItem(myPerson.fName);
-            lvi.SubItems.Add(myPerson.lName);
-            lvi.SubItems.Add(myPerson.street);
-            lvi.SubItems.Add(myPerson.number);
-            lvi.SubItems.Add(myPerson.plz);
-            lvi.SubItems.Add(myPerson.location);
-            lvi.SubItems.Add(myPerson.telefon);
-            lvi.SubItems.Add(myPerson.email);
-            lvi.SubItems.Add(myPerson.id.ToString());
+            lvi = new ListViewItem(myPerson.FName);
+            lvi.SubItems.Add(myPerson.LName);
+            lvi.SubItems.Add(myPerson.Street);
+            lvi.SubItems.Add(myPerson.Number);
+            lvi.SubItems.Add(myPerson.Plz);
+            lvi.SubItems.Add(myPerson.Location);
+            lvi.SubItems.Add(myPerson.Telefon);
+            lvi.SubItems.Add(myPerson.Email);
+            lvi.SubItems.Add(myPerson.Id.ToString());
             listView1.Items.Add(lvi);
             ClearForm();
         }
@@ -61,15 +61,15 @@ namespace Personen_db
             myAddresses = myDB.readDB();
             foreach (Person entry in myAddresses)
             {
-                ListViewItem lvi = new ListViewItem(entry.fName);
-                lvi.SubItems.Add(entry.lName);
-                lvi.SubItems.Add(entry.street);
-                lvi.SubItems.Add(entry.number);
-                lvi.SubItems.Add(entry.plz);
-                lvi.SubItems.Add(entry.location);
-                lvi.SubItems.Add(entry.telefon);
-                lvi.SubItems.Add(entry.email);
-                lvi.SubItems.Add(entry.id.ToString());
+                ListViewItem lvi = new ListViewItem(entry.FName);
+                lvi.SubItems.Add(entry.LName);
+                lvi.SubItems.Add(entry.Street);
+                lvi.SubItems.Add(entry.Number);
+                lvi.SubItems.Add(entry.Plz);
+                lvi.SubItems.Add(entry.Location);
+                lvi.SubItems.Add(entry.Telefon);
+                lvi.SubItems.Add(entry.Email);
+                lvi.SubItems.Add(entry.Id.ToString());
                 listView1.Items.Add(lvi);
             }
         }

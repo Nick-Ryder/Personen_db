@@ -93,14 +93,14 @@ namespace Personen_db
                     command.Connection = connection;
                     //string sql = "Insert into Address Values('" + Guid.NewGuid() + "','"
                     string sql = "Insert into Address Values('"
-                        + person.fName + "','"
-                        + person.lName + "','"
-                        + person.street + "','"
-                        + person.number + "','"
-                        + person.plz + "','"
-                        + person.location + "','"
-                        + person.telefon + "','"
-                        + person.email + "')";
+                        + person.FName + "','"
+                        + person.LName + "','"
+                        + person.Street + "','"
+                        + person.Number + "','"
+                        + person.Plz + "','"
+                        + person.Location + "','"
+                        + person.Telefon + "','"
+                        + person.Email + "')";
                     command.CommandText = sql;
                     int affectedRows = command.ExecuteNonQuery();
                     MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
@@ -125,15 +125,15 @@ namespace Personen_db
                     while (reader.Read())
                     {
                         Person address = new Person();
-                        address.id = reader.GetInt32(0);
-                        address.fName = reader.GetString(1);
-                        address.lName = reader.GetString(2);
-                        address.street = reader.GetString(3);
-                        address.number = reader.GetString(4);
-                        address.plz = reader.GetString(5);
-                        address.location = reader.GetString(6);
-                        address.telefon = reader.GetString(7);
-                        address.email = reader.GetString(8);
+                        address.Id = reader.GetInt32(0);
+                        address.FName = reader.GetString(1);
+                        address.LName = reader.GetString(2);
+                        address.Street = reader.GetString(3);
+                        address.Number = reader.GetString(4);
+                        address.Plz = reader.GetString(5);
+                        address.Location = reader.GetString(6);
+                        address.Telefon = reader.GetString(7);
+                        address.Email = reader.GetString(8);
                         readAddresses.Add(address);
                         i++;
                     }

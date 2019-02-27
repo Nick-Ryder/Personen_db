@@ -8,14 +8,14 @@ namespace Personen_db
 {
     public class Person
     {
-        public string fName { get; set; }
-        public string lName="";
-        public string street="";
-        public string number="";
-        public string plz="11111";
-        public string location="";
-        public string telefon="";
-        public string email="@";
-        public int id = 0;
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public string Street { get; set; }
+        public string Number { get; set; }
+        public string Plz { get; set; }
+        public string Location { get; set; }
+        public string Telefon { get; set; }
+        public string Email { get; set; }
+        public int Id { get; set; }
     }
 }
