@@ -14,7 +14,7 @@ namespace Personen_db
         public string Number { get; set; }
         public string Plz { get; set; }
         public string Location { get; set; }
-        public string Telefon { get; set; }
+        public string Telephone { get; set; }
         public string Email { get; set; }
         public int Id { get; set; }
     }

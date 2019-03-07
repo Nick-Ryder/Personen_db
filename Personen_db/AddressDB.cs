@@ -99,7 +99,7 @@ namespace Personen_db
                         + person.Number + "','"
                         + person.Plz + "','"
                         + person.Location + "','"
-                        + person.Telefon + "','"
+                        + person.Telephone + "','"
                         + person.Email + "')";
                     command.CommandText = sql;
                     int affectedRows = command.ExecuteNonQuery();
@@ -109,7 +109,7 @@ namespace Personen_db
             }
         }
 
-        public List<Person> readDB()
+        public List<Person> ReadDB()
         {
             List<Person> readAddresses = new List<Person>();
             //Person address = new Person();
@@ -124,16 +124,18 @@ namespace Personen_db
                     SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
-                        Person address = new Person();
-                        address.Id = reader.GetInt32(0);
-                        address.FName = reader.GetString(1);
-                        address.LName = reader.GetString(2);
-                        address.Street = reader.GetString(3);
-                        address.Number = reader.GetString(4);
-                        address.Plz = reader.GetString(5);
-                        address.Location = reader.GetString(6);
-                        address.Telefon = reader.GetString(7);
-                        address.Email = reader.GetString(8);
+                        Person address = new Person
+                        {
+                            Id = reader.GetInt32(0),
+                            FName = reader.GetString(1),
+                            LName = reader.GetString(2),
+                            Street = reader.GetString(3),
+                            Number = reader.GetString(4),
+                            Plz = reader.GetString(5),
+                            Location = reader.GetString(6),
+                            Telephone = reader.GetString(7),
+                            Email = reader.GetString(8)
+                        };
                         readAddresses.Add(address);
                         i++;
                     }

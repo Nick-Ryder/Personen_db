@@ -29,7 +29,7 @@ namespace Personen_db
             myPerson.Number = textBoxNr.Text;
             myPerson.Plz = textBoxPlz.Text;
             myPerson.Location = textBoxLocation.Text;
-            myPerson.Telefon = textBoxTelefon.Text;
+            myPerson.Telephone = textBoxTelefon.Text;
             myPerson.Email = textBoxEmail.Text;
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
             // Personendaten in mdf eintragen
@@ -43,7 +43,7 @@ namespace Personen_db
             lvi.SubItems.Add(myPerson.Number);
             lvi.SubItems.Add(myPerson.Plz);
             lvi.SubItems.Add(myPerson.Location);
-            lvi.SubItems.Add(myPerson.Telefon);
+            lvi.SubItems.Add(myPerson.Telephone);
             lvi.SubItems.Add(myPerson.Email);
             lvi.SubItems.Add(myPerson.Id.ToString());
             listView1.Items.Add(lvi);
@@ -58,7 +58,7 @@ namespace Personen_db
         private void ShowAddresses()
         {
             List<Person> myAddresses = new List<Person>();
-            myAddresses = myDB.readDB();
+            myAddresses = myDB.ReadDB();
             foreach (Person entry in myAddresses)
             {
                 ListViewItem lvi = new ListViewItem(entry.FName);
@@ -67,26 +67,34 @@ namespace Personen_db
                 lvi.SubItems.Add(entry.Number);
                 lvi.SubItems.Add(entry.Plz);
                 lvi.SubItems.Add(entry.Location);
-                lvi.SubItems.Add(entry.Telefon);
+                lvi.SubItems.Add(entry.Telephone);
                 lvi.SubItems.Add(entry.Email);
                 lvi.SubItems.Add(entry.Id.ToString());
                 listView1.Items.Add(lvi);
             }
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e)             // Doppelklick
+        private void ListView1_ItemActivate(object sender, EventArgs e)             // Doppelklick
         {
             ListViewEntry_Selected();
+            insert.Enabled = false;
+            change.Enabled = true;
         }
 
-        private void listView1_ItemActivate(object sender, MouseEventArgs e)        // einfacher Klick
+        private void ListView1_ItemActivate(object sender, MouseEventArgs e)        // einfacher Klick
         {
             ListViewEntry_Selected();
+            insert.Enabled = false;
+            change.Enabled = true;
         }
 
         private void Neu_Click(object sender, EventArgs e)
         {
             ClearForm();
+            insert.Enabled = true;
+            delete.Enabled = false;
+            change.Enabled = false;
+            textBoxFname.Focus();
         }
 
         private void ClearForm()
