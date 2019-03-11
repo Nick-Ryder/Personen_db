@@ -50,9 +50,35 @@ namespace Personen_db
             ClearForm();
         }
 
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0) {
+                int id_db = Convert.ToInt32(listView1.SelectedItems[0].SubItems[8].Text);               // id in db
+                //MessageBox.Show(listView1.SelectedIndices[0].ToString(), "Hallo", MessageBoxButtons.OK);
+                //MessageBox.Show(id_db.ToString(), "Hallo", MessageBoxButtons.OK);
+                if (myDB.RemoveFromDb(id_db)) {
+                    listView1.Items.RemoveAt(listView1.SelectedIndices[0]);
+                    ClearForm();
+                    insert.Enabled = false;
+                    delete.Enabled = false;
+                    change.Enabled = false;
+                    Neu.Enabled = true;
+                }
+            }
+        }
+
         private void Change_Click(object sender, EventArgs e)
         {
             ShowAddresses();
+        }
+
+        private void Neu_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            insert.Enabled = true;
+            delete.Enabled = false;
+            change.Enabled = false;
+            textBoxFname.Focus();
         }
 
         private void ShowAddresses()
@@ -79,6 +105,7 @@ namespace Personen_db
             ListViewEntry_Selected();
             insert.Enabled = false;
             change.Enabled = true;
+            delete.Enabled = true;
         }
 
         private void ListView1_ItemActivate(object sender, MouseEventArgs e)        // einfacher Klick
@@ -86,15 +113,7 @@ namespace Personen_db
             ListViewEntry_Selected();
             insert.Enabled = false;
             change.Enabled = true;
-        }
-
-        private void Neu_Click(object sender, EventArgs e)
-        {
-            ClearForm();
-            insert.Enabled = true;
-            delete.Enabled = false;
-            change.Enabled = false;
-            textBoxFname.Focus();
+            delete.Enabled = true;
         }
 
         private void ClearForm()
@@ -107,7 +126,6 @@ namespace Personen_db
             textBoxLocation.Text = "";
             textBoxTelefon.Text = "";
             textBoxEmail.Text = "";
-            insert.Enabled = true;
         }
 
         private void ListViewEntry_Selected()

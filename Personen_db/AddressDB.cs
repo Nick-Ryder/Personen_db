@@ -103,9 +103,36 @@ namespace Personen_db
                         + person.Email + "')";
                     command.CommandText = sql;
                     int affectedRows = command.ExecuteNonQuery();
-                    MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
+                    
+                    //MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
                 }
                 connection.Close();
+            }
+        }
+
+        public bool RemoveFromDb(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(datapath))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        //string sql = "Insert into Address Values('" + Guid.NewGuid() + "','"
+                        string sql = "Delete from Address where id="+id.ToString();
+                        command.CommandText = sql;
+                        int affectedRows = command.ExecuteNonQuery();
+                        MessageBox.Show("After delete, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 

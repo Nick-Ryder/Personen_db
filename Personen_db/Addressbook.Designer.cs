@@ -151,7 +151,7 @@
             // textBoxFname
             // 
             this.textBoxFname.Location = new System.Drawing.Point(175, 44);
-            this.textBoxFname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFname.Name = "textBoxFname";
             this.textBoxFname.Size = new System.Drawing.Size(172, 22);
             this.textBoxFname.TabIndex = 8;
@@ -159,7 +159,7 @@
             // textBoxLname
             // 
             this.textBoxLname.Location = new System.Drawing.Point(175, 78);
-            this.textBoxLname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLname.Name = "textBoxLname";
             this.textBoxLname.Size = new System.Drawing.Size(172, 22);
             this.textBoxLname.TabIndex = 9;
@@ -167,7 +167,7 @@
             // textBoxStreet
             // 
             this.textBoxStreet.Location = new System.Drawing.Point(175, 110);
-            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStreet.Name = "textBoxStreet";
             this.textBoxStreet.Size = new System.Drawing.Size(172, 22);
             this.textBoxStreet.TabIndex = 10;
@@ -175,7 +175,7 @@
             // textBoxNr
             // 
             this.textBoxNr.Location = new System.Drawing.Point(175, 143);
-            this.textBoxNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNr.Name = "textBoxNr";
             this.textBoxNr.Size = new System.Drawing.Size(65, 22);
             this.textBoxNr.TabIndex = 11;
@@ -183,7 +183,7 @@
             // textBoxPlz
             // 
             this.textBoxPlz.Location = new System.Drawing.Point(175, 176);
-            this.textBoxPlz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPlz.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPlz.Name = "textBoxPlz";
             this.textBoxPlz.Size = new System.Drawing.Size(65, 22);
             this.textBoxPlz.TabIndex = 12;
@@ -191,7 +191,7 @@
             // textBoxLocation
             // 
             this.textBoxLocation.Location = new System.Drawing.Point(175, 209);
-            this.textBoxLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLocation.Name = "textBoxLocation";
             this.textBoxLocation.Size = new System.Drawing.Size(172, 22);
             this.textBoxLocation.TabIndex = 13;
@@ -199,7 +199,7 @@
             // textBoxTelefon
             // 
             this.textBoxTelefon.Location = new System.Drawing.Point(175, 242);
-            this.textBoxTelefon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefon.Name = "textBoxTelefon";
             this.textBoxTelefon.Size = new System.Drawing.Size(132, 22);
             this.textBoxTelefon.TabIndex = 14;
@@ -207,7 +207,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(175, 274);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(172, 22);
             this.textBoxEmail.TabIndex = 15;
@@ -216,7 +216,7 @@
             // 
             this.insert.Enabled = false;
             this.insert.Location = new System.Drawing.Point(83, 341);
-            this.insert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.insert.Margin = new System.Windows.Forms.Padding(4);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(100, 28);
             this.insert.TabIndex = 16;
@@ -228,18 +228,19 @@
             // 
             this.delete.Enabled = false;
             this.delete.Location = new System.Drawing.Point(248, 340);
-            this.delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete.Margin = new System.Windows.Forms.Padding(4);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(100, 28);
             this.delete.TabIndex = 17;
             this.delete.Text = "Löschen";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // change
             // 
             this.change.Enabled = false;
             this.change.Location = new System.Drawing.Point(417, 340);
-            this.change.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.change.Margin = new System.Windows.Forms.Padding(4);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(100, 28);
             this.change.TabIndex = 18;
@@ -265,7 +266,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 377);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1079, 384);
             this.listView1.TabIndex = 20;
@@ -322,7 +323,7 @@
             // Neu
             // 
             this.Neu.Location = new System.Drawing.Point(591, 340);
-            this.Neu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Neu.Margin = new System.Windows.Forms.Padding(4);
             this.Neu.Name = "Neu";
             this.Neu.Size = new System.Drawing.Size(100, 28);
             this.Neu.TabIndex = 21;
@@ -356,7 +357,7 @@
             this.Controls.Add(this.Strasse);
             this.Controls.Add(this.Nachname);
             this.Controls.Add(this.Vorname);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Addressbook";
             this.Text = "Adressbuch";
             this.ResumeLayout(false);
