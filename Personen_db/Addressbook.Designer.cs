@@ -214,7 +214,6 @@
             // 
             // insert
             // 
-            this.insert.Enabled = false;
             this.insert.Location = new System.Drawing.Point(83, 341);
             this.insert.Margin = new System.Windows.Forms.Padding(4);
             this.insert.Name = "insert";

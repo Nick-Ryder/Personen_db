@@ -33,7 +33,7 @@ namespace Personen_db
             myPerson.Email = textBoxEmail.Text;
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
             // Personendaten in mdf eintragen
-            myDB.Insert(myPerson);
+            int index=myDB.Insert(myPerson);
 
             // Daten in Listview eintragen
             ListViewItem lvi;
@@ -45,7 +45,7 @@ namespace Personen_db
             lvi.SubItems.Add(myPerson.Location);
             lvi.SubItems.Add(myPerson.Telephone);
             lvi.SubItems.Add(myPerson.Email);
-            lvi.SubItems.Add(myPerson.Id.ToString());
+            lvi.SubItems.Add(index.ToString());
             listView1.Items.Add(lvi);
             ClearForm();
         }

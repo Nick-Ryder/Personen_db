@@ -84,8 +84,9 @@ namespace Personen_db
 
         //}
 
-        public void Insert(Person person)
+        public int Insert(Person person)
         {
+            int index;
             using (SqlConnection connection = new SqlConnection(datapath)) {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand())
@@ -103,11 +104,14 @@ namespace Personen_db
                         + person.Email + "')";
                     command.CommandText = sql;
                     int affectedRows = command.ExecuteNonQuery();
-                    
+                    command.CommandText = "SELECT SCOPE_IDENTITY()";
+                    index=Convert.ToInt32(command.ExecuteScalar());
                     //MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
+                    MessageBox.Show("After insert, Index " + index, "Affected", MessageBoxButtons.OK);
                 }
                 connection.Close();
             }
+            return index;
         }
 
         public bool RemoveFromDb(int id)
@@ -120,11 +124,10 @@ namespace Personen_db
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        //string sql = "Insert into Address Values('" + Guid.NewGuid() + "','"
                         string sql = "Delete from Address where id="+id.ToString();
                         command.CommandText = sql;
                         int affectedRows = command.ExecuteNonQuery();
-                        MessageBox.Show("After delete, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
+                        //MessageBox.Show("After delete, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
                     }
                     connection.Close();
                 }
