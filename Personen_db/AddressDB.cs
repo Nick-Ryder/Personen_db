@@ -107,7 +107,7 @@ namespace Personen_db
                     command.CommandText = "SELECT SCOPE_IDENTITY()";
                     index=Convert.ToInt32(command.ExecuteScalar());
                     //MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
-                    MessageBox.Show("After insert, Index " + index, "Affected", MessageBoxButtons.OK);
+                    //MessageBox.Show("After insert, Index " + index, "Affected", MessageBoxButtons.OK);
                 }
                 connection.Close();
             }
