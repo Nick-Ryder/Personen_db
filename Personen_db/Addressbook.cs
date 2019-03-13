@@ -19,6 +19,7 @@ namespace Personen_db
         {
             InitializeComponent();
             ShowAddresses();
+            LockForm();
         }
 
         public void Insert_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace Personen_db
             myPerson.Email = textBoxEmail.Text;
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
             // Personendaten in mdf eintragen
-            int index=myDB.Insert(myPerson);
+            int index=myDB.Insert(myPerson);            // index = Primärschlüssel in DB
 
             // Daten in Listview eintragen
             ListViewItem lvi;
@@ -48,6 +49,7 @@ namespace Personen_db
             lvi.SubItems.Add(index.ToString());
             listView1.Items.Add(lvi);
             ClearForm();
+            LockForm();
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -69,13 +71,13 @@ namespace Personen_db
 
         private void Change_Click(object sender, EventArgs e)
         {
-            ShowAddresses();
+            
         }
 
         private void Neu_Click(object sender, EventArgs e)
         {
             ClearForm();
-            insert.Enabled = true;
+            UnlockForm();
             delete.Enabled = false;
             change.Enabled = false;
             textBoxFname.Focus();
@@ -103,6 +105,7 @@ namespace Personen_db
         private void ListView1_ItemActivate(object sender, EventArgs e)             // Doppelklick
         {
             ListViewEntry_Selected();
+            UnlockForm();
             insert.Enabled = false;
             change.Enabled = true;
             delete.Enabled = true;
@@ -111,6 +114,7 @@ namespace Personen_db
         private void ListView1_ItemActivate(object sender, MouseEventArgs e)        // einfacher Klick
         {
             ListViewEntry_Selected();
+            UnlockForm();
             insert.Enabled = false;
             change.Enabled = true;
             delete.Enabled = true;
@@ -126,6 +130,38 @@ namespace Personen_db
             textBoxLocation.Text = "";
             textBoxTelefon.Text = "";
             textBoxEmail.Text = "";
+        }
+
+        private void LockForm()
+        {
+            textBoxFname.Enabled = false;
+            textBoxLname.Enabled = false;
+            textBoxStreet.Enabled = false;
+            textBoxNr.Enabled = false;
+            textBoxPlz.Enabled = false;
+            textBoxLocation.Enabled = false;
+            textBoxTelefon.Enabled = false;
+            textBoxEmail.Enabled = false;
+            insert.Enabled = false;
+            change.Enabled = false;
+            delete.Enabled = false;
+            Neu.Enabled = true;
+        }
+
+        private void UnlockForm()
+        {
+            textBoxFname.Enabled = true;
+            textBoxLname.Enabled = true;
+            textBoxStreet.Enabled = true;
+            textBoxNr.Enabled = true;
+            textBoxPlz.Enabled = true;
+            textBoxLocation.Enabled = true;
+            textBoxTelefon.Enabled = true;
+            textBoxEmail.Enabled = true;
+            insert.Enabled = true;
+            change.Enabled = true;
+            delete.Enabled = true;
+            Neu.Enabled = true;
         }
 
         private void ListViewEntry_Selected()

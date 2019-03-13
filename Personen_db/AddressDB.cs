@@ -150,7 +150,7 @@ namespace Personen_db
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Select * from Address";
+                    command.CommandText = "Select * from Address order by Nachname";
                     SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
                     while (reader.Read())
                     {
