@@ -15,6 +15,7 @@ namespace Personen_db
     {
         Person myPerson = new Person();
         AddressDB myDB = new AddressDB();
+
         public Addressbook()
         {
             InitializeComponent();
@@ -61,17 +62,45 @@ namespace Personen_db
                 if (myDB.RemoveFromDb(id_db)) {
                     listView1.Items.RemoveAt(listView1.SelectedIndices[0]);
                     ClearForm();
+                    LockForm();
                     insert.Enabled = false;
                     delete.Enabled = false;
                     change.Enabled = false;
                     Neu.Enabled = true;
                 }
+                else
+                {
+                    MessageBox.Show("Datenbank Fehler", "Achtung", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kein Eintrag selektiert!", "Achtung", MessageBoxButtons.OK);
             }
         }
 
         private void Change_Click(object sender, EventArgs e)
         {
-            
+            if (listView1.SelectedItems.Count > 0) {
+                myPerson.FName = textBoxFname.Text;
+                myPerson.LName = textBoxLname.Text;
+                myPerson.Street = textBoxStreet.Text;
+                myPerson.Number = textBoxNr.Text;
+                myPerson.Plz = textBoxPlz.Text;
+                myPerson.Location = textBoxLocation.Text;
+                myPerson.Telephone = textBoxTelefon.Text;
+                myPerson.Email = textBoxEmail.Text;
+                myPerson.Id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[8].Text);
+                int index = myDB.Update(myPerson);
+                listView1.Items.Clear();
+                ShowAddresses();
+                ClearForm();
+                LockForm();
+            }
+            else
+            {
+                MessageBox.Show("Es ist kein Eintrag selektiert", "Achtung", MessageBoxButtons.OK);
+            }
         }
 
         private void Neu_Click(object sender, EventArgs e)
@@ -106,7 +135,7 @@ namespace Personen_db
         {
             ListViewEntry_Selected();
             UnlockForm();
-            insert.Enabled = false;
+            insert.Enabled = true;
             change.Enabled = true;
             delete.Enabled = true;
         }
@@ -115,7 +144,7 @@ namespace Personen_db
         {
             ListViewEntry_Selected();
             UnlockForm();
-            insert.Enabled = false;
+            insert.Enabled = true;
             change.Enabled = true;
             delete.Enabled = true;
         }
@@ -178,7 +207,6 @@ namespace Personen_db
                 textBoxLocation.Text = lvi.SubItems[5].Text;
                 textBoxTelefon.Text = lvi.SubItems[6].Text;
                 textBoxEmail.Text = lvi.SubItems[7].Text;
-                insert.Enabled = false;
             }
         }
     }

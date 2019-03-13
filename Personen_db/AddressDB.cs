@@ -114,6 +114,45 @@ namespace Personen_db
             return index;
         }
 
+        public int Update(Person person)
+        {
+            int index = -1;
+            using (SqlConnection connection = new SqlConnection(datapath))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        //string sql = "Insert into Address Values('" + Guid.NewGuid() + "','"
+                        string sql = "Update Address Set Vorname='"
+                            + person.FName + "', Nachname='"
+                            + person.LName + "', Strasse='"
+                            + person.Street + "', Hausnummer='"
+                            + person.Number + "', Plz='"
+                            + person.Plz + "', Ort='"
+                            + person.Location + "', Telefon='"
+                            + person.Telephone + "', Email='"
+                            + person.Email + "' Where Id=" + person.Id;
+                        command.CommandText = sql;
+                        int affectedRows = command.ExecuteNonQuery();
+                        command.CommandText = "SELECT SCOPE_IDENTITY()";
+                        index = Convert.ToInt32(command.ExecuteScalar());
+                        //MessageBox.Show("After insert, affected rows: " + affectedRows, "Affected", MessageBoxButtons.OK);
+                        //MessageBox.Show("After insert, Index " + index, "Affected", MessageBoxButtons.OK);
+                    }
+                }
+                catch(Exception ex) {
+                    Console.WriteLine(ex);
+                }
+                finally {
+                    connection.Close();
+                }
+            }
+            return index;
+        }
+
         public bool RemoveFromDb(int id)
         {
             try
