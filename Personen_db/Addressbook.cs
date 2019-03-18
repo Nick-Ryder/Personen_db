@@ -25,21 +25,20 @@ namespace Personen_db
 
         public void Insert_Click(object sender, EventArgs e)
         {
-            myPerson.FName = textBoxFname.Text;
-            myPerson.LName = textBoxLname.Text;
-            myPerson.Street = textBoxStreet.Text;
-            myPerson.Number = textBoxNr.Text;
-            myPerson.Plz = textBoxPlz.Text;
-            myPerson.Location = textBoxLocation.Text;
-            myPerson.Telephone = textBoxTelefon.Text;
-            myPerson.Email = textBoxEmail.Text;
+            GetTextboxEntries();
             //MessageBox.Show(myPerson.fName + myPerson.Lname + myPerson.street + myPerson.number + myPerson.plz + myPerson.location + myPerson.telefon + myPerson.email, "Hallo", MessageBoxButtons.OK);
             // Personendaten in mdf eintragen
-            int index=myDB.Insert(myPerson);            // index = Primärschlüssel in DB
+            int index = myDB.Insert(myPerson);            // index = Primärschlüssel in DB
 
             // Daten in Listview eintragen
-            ListViewItem lvi;
-            lvi = new ListViewItem(myPerson.FName);
+            AddPersonToListview(index);
+            ClearForm();
+            LockForm();
+        }
+
+        private void AddPersonToListview(int index)
+        {
+            ListViewItem lvi = new ListViewItem(myPerson.FName);
             lvi.SubItems.Add(myPerson.LName);
             lvi.SubItems.Add(myPerson.Street);
             lvi.SubItems.Add(myPerson.Number);
@@ -49,8 +48,18 @@ namespace Personen_db
             lvi.SubItems.Add(myPerson.Email);
             lvi.SubItems.Add(index.ToString());
             listView1.Items.Add(lvi);
-            ClearForm();
-            LockForm();
+        }
+
+        private void GetTextboxEntries()
+        {
+            myPerson.FName = textBoxFname.Text;
+            myPerson.LName = textBoxLname.Text;
+            myPerson.Street = textBoxStreet.Text;
+            myPerson.Number = textBoxNr.Text;
+            myPerson.Plz = textBoxPlz.Text;
+            myPerson.Location = textBoxLocation.Text;
+            myPerson.Telephone = textBoxTelefon.Text;
+            myPerson.Email = textBoxEmail.Text;
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -82,14 +91,7 @@ namespace Personen_db
         private void Change_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0) {
-                myPerson.FName = textBoxFname.Text;
-                myPerson.LName = textBoxLname.Text;
-                myPerson.Street = textBoxStreet.Text;
-                myPerson.Number = textBoxNr.Text;
-                myPerson.Plz = textBoxPlz.Text;
-                myPerson.Location = textBoxLocation.Text;
-                myPerson.Telephone = textBoxTelefon.Text;
-                myPerson.Email = textBoxEmail.Text;
+                GetTextboxEntries();
                 myPerson.Id = Convert.ToInt32(listView1.SelectedItems[0].SubItems[8].Text);
                 int index = myDB.Update(myPerson);
                 listView1.Items.Clear();
